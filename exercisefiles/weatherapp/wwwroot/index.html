@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>WeatherPulse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <main class="shell">
+        <section class="card">
+            <p class="eyebrow">Open weather, no login</p>
+            <h1>WeatherPulse</h1>
+            <p class="subtext">Search any city and instantly see the latest conditions.</p>
+
+            <form id="weather-form" class="search-form" novalidate>
+                <label class="sr-only" for="city-input">City</label>
+                <div class="search-box">
+                    <span class="icon">⌕</span>
+                    <input id="city-input" name="city" type="text" placeholder="Search for a city..." autocomplete="off" required />
+                    <button type="submit">Check Weather</button>
+                </div>
+                <ul id="suggestions" class="suggestions hidden" aria-label="City suggestions"></ul>
+            </form>
+
+            <div id="status" class="status" aria-live="polite"></div>
+
+            <article id="weather-result" class="weather-result hidden" aria-live="polite">
+                <div class="meta-row">
+                    <span class="badge">City</span>
+                    <strong id="city-name">-</strong>
+                </div>
+                <div class="temperature-row">
+                    <div>
+                        <div class="temperature" id="temperature">--°C</div>
+                        <div class="condition-row">
+                            <div class="condition" id="condition">--</div>
+                            <span class="condition-icon" id="condition-icon" aria-hidden="true">--</span>
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div><span>Humidity</span><strong id="humidity">--</strong></div>
+                        <div><span>Wind</span><strong id="wind">--</strong></div>
+                    </div>
+                </div>
+                <div class="updated" id="updated">--</div>
+            </article>
+        </section>
+    </main>
+
+    <script src="/app.js"></script>
+</body>
+</html>
